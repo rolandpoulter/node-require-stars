@@ -1,10 +1,10 @@
-## Require Star ##
+## Require Stars ##
 
 Requires entire directories with one call to require.
 
 ### How to install ###
 
-	npm install require-star
+	npm install require-stars
 
 ### How to run the tests ###
 
@@ -14,7 +14,7 @@ Requires entire directories with one call to require.
 
 Require shallow directory
 
-	require('require-star')();
+	require('require-stars')();
 
 	requrie('./myDir/*');
 
@@ -29,7 +29,7 @@ Enumerate directory exports:
 	var list = [],
 	    flat = {};
 
-	require('require-star/enum')(require('./myDir/**'), function (exports, name, path, obj) {
+	require('require-stars/enum')(require('./myDir/**'), function (exports, name, path, obj) {
 		list.push(exports);
 		flat[path] = exports;
 	}, this);
