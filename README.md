@@ -1,5 +1,7 @@
 ## Require Stars ##
 
+[![Build Status](https://secure.travis-ci.org/rolandpoulter/node-require-stars.png)](http://travis-ci.org/rolandpoulter/node-require-stars)
+
 Requires entire directories with one call to require.
 
 ### How to install ###
@@ -8,7 +10,7 @@ Requires entire directories with one call to require.
 
 ### How to run the tests ###
 
-	node ./test
+	npm test
 
 ### How to use ###
 
