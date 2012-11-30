@@ -131,11 +131,15 @@ function requireDir(dir, deep, require, exports, extentions, _path) {
 
 		nextPath = _path ? _path + '/' + name : name;
 
-		if (stat.isFile() && (!extn || extentions.indexOf(extn) !== -1)) {
-			exports[nextPath] = require(file, undefined, undefined, nextPath);
+		if (stat.isFile()) {
+		  if (name.charAt(0) === '.') return;
+
+		  if (!extn || extentions.indexOf(extn) !== -1) {
+		    exports[nextPath] = require(file, undefined, undefined, nextPath);
+		  }
 
 		} else if (deep && stat.isDirectory()) {
-			dirs.push({file: file, nextPath: nextPath});
+		  dirs.push({file: file, nextPath: nextPath});
 		}
 	});
 
