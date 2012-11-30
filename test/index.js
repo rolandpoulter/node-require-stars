@@ -1,4 +1,4 @@
-require('./index.js')();
+require('../index.js')();
 
 var assert = require('assert');
 
@@ -14,7 +14,7 @@ assert(test['1/2/b'] === '1.2.b');
 
 var flatExports = [];
 
-require('./enum')(test, function (exports, name, path, obj) {
+require('../enum')(test, function (exports, name, path, obj) {
 	flatExports.push(exports);
 });
 
@@ -24,7 +24,7 @@ assert(flatExports.join(',') === 'a,b,1.a,1.b,1.2.a,1.2.b');
 flatExports = [];
 test = require('./test_dir/*');
 
-require('./enum')(test, function (exports) {flatExports.push(exports);});
+require('../enum')(test, function (exports) {flatExports.push(exports);});
 
 assert(flatExports.join(',') === 'a,b');
 
