@@ -10,7 +10,7 @@ module.exports = function (Module, browserifyWrap) {
 	patchModuleSystem(Module);
 
 	try {
-		browserifyWrap = (browserifyWrap || require('browserify/lib/wrap'))({}).constructor;
+		browserifyWrap = (browserifyWrap || require('browserify/lib/wrap'))({cache: false}).constructor;
 
 	} catch (err) {}
 
